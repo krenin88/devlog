@@ -21,3 +21,4 @@ Claude로 앱을 개발한 내역을 블로그 글로 만든다. 한글은 GitHu
 - **GitHub:** https://github.com/rogue1228/devlog (public), Pages = main / root, https://rogue1228.github.io/devlog/
 - **`.env`는 main 체크아웃(`~/workspace/devlog/.env`)이 원본.** 사용자가 앱 파일 창에서 worktree 쪽 `.env`를 편집하는 일이 두 번 있었음 — 키 확인 시 양쪽을 다 보고 main으로 옮길 것.
 - **Jekyll `timezone: Asia/Seoul` 필수.** 없으면 UTC 기준이라 KST 새벽에 오늘 날짜 글을 올리면 미래 글로 보고 빌드에서 빠짐 (2026-10-12 첫 게시 때 추가).
+- **첫 글 게시 (2026-10-12):** dev.to·Pages 게시 검증 완료. Threads 게시는 같은 날 이미 SNS에 올려 생략 — `threads_publish.py` 실제 게시는 아직 미검증.
