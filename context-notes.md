@@ -13,3 +13,6 @@ Claude로 앱을 개발한 내역을 블로그 글로 만든다. 한글은 GitHu
 - **게시는 항상 명시적 승인 후.** 한글 게시 = `_posts/` 커밋 + push, 영문 = dev.to API.
 - **개인정보:** 초안에 키·토큰·이메일·고객/회사 실명·절대 경로 사용자명 등 넣지 않음.
 - 예약 작업은 worktree가 아닌 main 체크아웃 `/Users/junhwa/workspace/devlog`에서 동작.
+- **`drafts/`·`state/`는 git 제외.** Pages는 public 저장소라 승인 전 초안·제안 목록·제외 프로젝트 이름이 공개되면 안 됨. 대신 로컬 전용이라 백업은 없음.
+- **dev.to 요청에 User-Agent 필수.** 없으면 빈 본문 403 (2026-10-12 확인). 키 검증은 `GET /api/users/me`로 함 — 테스트 게시는 계정에 글이 생기므로 하지 않음.
+- **main 체크아웃 반영 시** graft가 만든 미추적 `.gitignore`·`.ignore`를 scratchpad로 옮기고 ff-merge. 내용은 커밋된 파일에 포함됨. `.env`는 worktree에서 main으로 복사(chmod 600).

@@ -16,6 +16,20 @@
 
 ## dev.to API 키
 
-- [ ] **API 키 발급 및 입력** — dev.to에 글을 게시하거나 조회하려면 필요합니다.
+- [x] **API 키 발급 및 입력** — dev.to에 글을 게시하거나 조회하려면 필요합니다.
   1. https://dev.to/settings/extensions → **DEV Community API Keys**에서 설명을 입력하고 **Generate API Key**를 누릅니다.
   2. 프로젝트 루트 `.env`의 `DEVTO_API_KEY=` 뒤에 붙여 넣습니다. (`.env`는 git에 올라가지 않습니다.)
+  - 2026-10-12 입력 확인됨 (계정 leejunhwa88, 읽기 전용 호출로 검증). main 체크아웃 `~/workspace/devlog/.env`에도 복사함.
+
+## 블로그 게시 준비
+
+- [ ] **GitHub 저장소 만들고 push** — 한글 글은 GitHub Pages로 게시합니다. 지금은 원격 저장소가 없습니다. 무료 플랜에서 Pages를 쓰려면 public이어야 합니다. 초안(`drafts/`)과 스캔 상태(`state/`)는 git에서 제외되어 올라가지 않습니다.
+  1. `cd ~/workspace/devlog && gh repo create devlog --public --source . --push`
+     (또는 Claude에게 "push 해줘"라고 요청)
+- [ ] **GitHub Pages 켜기** — 시스템이 `_posts/`를 블로그로 렌더링합니다.
+  1. GitHub 저장소 → Settings → Pages → Source: **Deploy from a branch**, Branch: **main** / **(root)** → Save
+  2. 1~2분 뒤 `https://<github-username>.github.io/devlog/` 접속 확인
+- [ ] **예약 작업 1회 수동 실행** — 첫 실행에서 도구 권한을 승인해 두면 이후 자동 실행이 권한 요청에서 멈추지 않습니다.
+  1. Claude 앱 사이드바 → Scheduled → **devlog 블로그 주제 후보** → **Run now**
+  2. 뜨는 권한 요청(Bash 실행 등)을 승인
+- 참고: 예약 작업은 Claude 앱이 열려 있을 때만 실행됩니다. 닫혀 있으면 다음에 앱을 열 때 실행됩니다.
