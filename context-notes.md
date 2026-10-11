@@ -20,3 +20,4 @@ Claude로 앱을 개발한 내역을 블로그 글로 만든다. 한글은 GitHu
 - **Threads 토큰은 게시 때마다 갱신해 .env에 다시 씀.** 장기 토큰은 60일 미사용 시 만료, 발급 24시간 이내엔 갱신 거절 → 그땐 기존 토큰 사용.
 - **GitHub:** https://github.com/rogue1228/devlog (public), Pages = main / root, https://rogue1228.github.io/devlog/
 - **`.env`는 main 체크아웃(`~/workspace/devlog/.env`)이 원본.** 사용자가 앱 파일 창에서 worktree 쪽 `.env`를 편집하는 일이 두 번 있었음 — 키 확인 시 양쪽을 다 보고 main으로 옮길 것.
+- **Jekyll `timezone: Asia/Seoul` 필수.** 없으면 UTC 기준이라 KST 새벽에 오늘 날짜 글을 올리면 미래 글로 보고 빌드에서 빠짐 (2026-10-12 첫 게시 때 추가).
