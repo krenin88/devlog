@@ -33,3 +33,16 @@
   1. Claude 앱 사이드바 → Scheduled → **devlog 블로그 주제 후보** → **Run now**
   2. 뜨는 권한 요청(Bash 실행 등)을 승인
 - 참고: 예약 작업은 Claude 앱이 열려 있을 때만 실행됩니다. 닫혀 있으면 다음에 앱을 열 때 실행됩니다.
+- [x] **GitHub Pages 켜기** (2026-10-12 완료, `gh api`로 main / root 설정) — https://rogue1228.github.io/devlog/
+
+## Threads 자동 게시 준비
+
+- [ ] **Meta 앱과 토큰 발급** — 홍보 글을 Threads에 자동으로 올리려면 필요합니다. 무료입니다.
+  1. https://developers.facebook.com/apps → **앱 만들기** → 사용 사례에서 **Threads API 액세스** 선택
+  2. 사용 사례 → 맞춤 설정 → 권한에 `threads_basic`, `threads_content_publish` 추가
+  3. 앱 역할 → 역할 → **Threads 테스터 추가**에 본인 Threads 계정 입력 → Threads 앱(설정 → 계정 → 웹사이트 권한 → 초대)에서 수락
+  4. 사용 사례 → 맞춤 설정 → 설정 → **사용자 토큰 생성기**에서 토큰 생성 (60일짜리 장기 토큰)
+  5. `~/workspace/devlog/.env`의 `THREADS_ACCESS_TOKEN=` 뒤에 붙여 넣기
+  6. Claude에게 "Threads 토큰 확인해줘"라고 요청 (읽기 전용 호출로 검증)
+  - 참고: 토큰은 60일 동안 쓰지 않으면 만료됩니다. 게시할 때마다 자동 갱신되지만, 두 달 넘게 안 쓰면 4번부터 다시 하면 됩니다. 메뉴 이름은 Meta가 자주 바꿔서 조금 다를 수 있습니다.
+- X는 자동 게시하지 않습니다. 블로그 게시 후 Claude가 보여 주는 문구를 직접 올립니다.

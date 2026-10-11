@@ -16,3 +16,6 @@ Claude로 앱을 개발한 내역을 블로그 글로 만든다. 한글은 GitHu
 - **`drafts/`·`state/`는 git 제외.** Pages는 public 저장소라 승인 전 초안·제안 목록·제외 프로젝트 이름이 공개되면 안 됨. 대신 로컬 전용이라 백업은 없음.
 - **dev.to 요청에 User-Agent 필수.** 없으면 빈 본문 403 (2026-10-12 확인). 키 검증은 `GET /api/users/me`로 함 — 테스트 게시는 계정에 글이 생기므로 하지 않음.
 - **main 체크아웃 반영 시** graft가 만든 미추적 `.gitignore`·`.ignore`를 scratchpad로 옮기고 ff-merge. 내용은 커밋된 파일에 포함됨. `.env`는 worktree에서 main으로 복사(chmod 600).
+- **Threads = API 자동, X = 문구만 (2026-10-12 사용자 결정).** X API는 무료 등급이 없고 링크 포함 글이 건당 약 $0.20(외부 자료 기준). 승인 단계가 있어 수동 복붙 비용이 작음. 게시가 잦아지면 X API 재검토.
+- **Threads 토큰은 게시 때마다 갱신해 .env에 다시 씀.** 장기 토큰은 60일 미사용 시 만료, 발급 24시간 이내엔 갱신 거절 → 그땐 기존 토큰 사용.
+- **GitHub:** https://github.com/rogue1228/devlog (public), Pages = main / root, https://rogue1228.github.io/devlog/

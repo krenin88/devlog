@@ -56,6 +56,17 @@ Claude로 앱을 만든 기록을 블로그 글로 만든다. 한글은 이 저�
 3. `state/topics.md`에 `- YYYY-MM-DD 게시: <제목> — <Pages URL> / <dev.to URL>` 추가.
 4. 두 URL을 사용자에게 보낸다.
 
+## 5단계 — 홍보 (블로그 게시 후)
+
+1. 채널별 홍보 문구 후보를 **2개씩** 내고, 각각 무엇이 다른지 한 줄씩 붙인다. 글자 수도 함께 보인다.
+   - **Threads** (한도 500자): 대화하듯 편한 톤, 한글 글 링크.
+   - **X** (한도 280자, 한글은 1자=2로 계산되니 140자 안쪽): 짧고 결과 중심, 링크 하나.
+   - 영문 버전이 필요하면 dev.to 링크로 따로 만든다.
+2. 사용자가 고른 문구를 `drafts/<slug>/threads.txt`, `drafts/<slug>/x.txt`에 저장한다.
+3. **Threads는 승인 후** `python3 scripts/threads_publish.py drafts/<slug>/threads.txt` → 출력된 URL 확인.
+4. **X는 자동 게시하지 않는다.** 최종 문구를 코드 블록으로 보여 주고, 사용자가 직접 올린다.
+5. `state/topics.md`의 해당 줄에 Threads URL을 덧붙인다.
+
 ## 개인정보·보안 규칙 (모든 단계)
 
 초안에 넣지 않는다 — API 키·토큰·비밀번호, 이메일·전화번호, 고객·회사 실명(사용자가 허락한 경우 제외), 사용자명이 들어간 절대 경로(`/Users/...` → `~/...`), 비공개 저장소의 내부 코드 대량 인용.
@@ -65,6 +76,7 @@ Claude로 앱을 만든 기록을 블로그 글로 만든다. 한글은 이 저�
 
 - `scripts/collect.py` — 수집 (`--selftest`로 자체 점검)
 - `scripts/devto_publish.py` — dev.to 게시
+- `scripts/threads_publish.py` — Threads 게시 (토큰 자동 갱신)
 - `state/` (git 제외) — `last-scan`, `topics.md`, `exclude.txt`(빼고 싶은 프로젝트 이름, 한 줄에 하나)
 - `drafts/` (git 제외) — 승인 전 초안
 - `_posts/` — 게시된 한글 글
