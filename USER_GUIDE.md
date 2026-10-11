@@ -11,4 +11,4 @@
 - [ ] **수동 `disablesleep 1` 정리 확인** — 헬퍼가 처음 뜰 때 기록 없는 `SleepDisabled=1`을 0으로 되돌립니다(의도된 동작). 이후 잠자기 제어는 eclam이 맡습니다.
   - 확인: `pmset -g | grep SleepDisabled` 가 `0` (keep-awake 꺼진 상태 기준)
 - [ ] (선택) **Claude Code 훅 설치** — 에이전트 감지가 ~5초 폴링에서 즉시로 바뀝니다. `~/.claude/settings.json`에 훅이 추가됩니다.
-  - 메뉴바 아이콘 우클릭 → Settings… → Agents 에서 설치
+  - 메뉴바 아이콘 우클릭 → Settings… → Agents → Advanced → **Install Claude hook**
