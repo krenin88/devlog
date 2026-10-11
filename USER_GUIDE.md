@@ -23,7 +23,7 @@
 
 ## 블로그 게시 준비
 
-- [ ] **GitHub 저장소 만들고 push** — 한글 글은 GitHub Pages로 게시합니다. 지금은 원격 저장소가 없습니다. 무료 플랜에서 Pages를 쓰려면 public이어야 합니다. 초안(`drafts/`)과 스캔 상태(`state/`)는 git에서 제외되어 올라가지 않습니다.
+- [x] **GitHub 저장소 만들고 push** (2026-10-12 완료, https://github.com/rogue1228/devlog) — 한글 글은 GitHub Pages로 게시합니다. 지금은 원격 저장소가 없습니다. 무료 플랜에서 Pages를 쓰려면 public이어야 합니다. 초안(`drafts/`)과 스캔 상태(`state/`)는 git에서 제외되어 올라가지 않습니다.
   1. `cd ~/workspace/devlog && gh repo create devlog --public --source . --push`
      (또는 Claude에게 "push 해줘"라고 요청)
 - [ ] **GitHub Pages 켜기** — 시스템이 `_posts/`를 블로그로 렌더링합니다.
