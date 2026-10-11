@@ -1,5 +1,6 @@
 title: devlog
 description: Claude와 함께 앱을 만드는 개발 기록
 lang: ko
+timezone: Asia/Seoul
 theme: minima
 exclude: [drafts, state, scripts, graft, checklist.md, context-notes.md, USER_GUIDE.md, WORKFLOW.md, .env.example]
