@@ -15,8 +15,8 @@
 
 - [x] 시안 3개 제시 → 사용자 B안 선택
 - [x] 문구 확정: 제목 "Krenin의 devlog", 소개, About 본문, GitHub·Threads 링크 미노출
-- [ ] minima 덮어쓰기: `_includes/head.html`·`header.html`·`footer.html`, `_layouts/home.html`·`post.html`, `assets/main.scss`
-- [ ] `about.md` 추가, `_config.yml` title·description·header_pages 갱신 (timezone·exclude 유지)
-- [ ] 로컬 빌드 → verify: 첫 글 주소 `/2026/10/12/lizard-ranch-demo.html` 그대로, 경고 없음
-- [ ] 화면 확인: 데스크톱·모바일 너비, 라이트·다크, 코드 블록·표 → 스크린샷
+- [x] minima 덮어쓰기: `_includes/head.html`·`header.html`·`footer.html`, `_layouts/home.html`·`post.html`, `assets/main.scss`
+- [x] `about.md` 추가, `_config.yml` title·description·header_pages 갱신 (timezone·exclude 유지)
+- [x] 로컬 빌드 → verify: 첫 글 주소 `/2026/10/12/lizard-ranch-demo.html` 그대로, 경고 없음
+- [x] 화면 확인: 데스크톱·모바일 너비, 라이트·다크, 코드 블록·표 → 스크린샷
 - [ ] 사용자 승인 → main ff-merge → push → Pages 결과 확인
