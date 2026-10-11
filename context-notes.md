@@ -22,3 +22,12 @@ Claude로 앱을 개발한 내역을 블로그 글로 만든다. 한글은 GitHu
 - **`.env`는 main 체크아웃(`~/workspace/devlog/.env`)이 원본.** 사용자가 앱 파일 창에서 worktree 쪽 `.env`를 편집하는 일이 두 번 있었음 — 키 확인 시 양쪽을 다 보고 main으로 옮길 것.
 - **Jekyll `timezone: Asia/Seoul` 필수.** 없으면 UTC 기준이라 KST 새벽에 오늘 날짜 글을 올리면 미래 글로 보고 빌드에서 빠짐 (2026-10-12 첫 게시 때 추가).
 - **첫 글 게시 (2026-10-12):** dev.to·Pages 게시 검증 완료. Threads 게시는 같은 날 이미 SNS에 올려 생략 — `threads_publish.py` 실제 게시는 아직 미검증.
+
+## 블로그 디자인 (2026-10-12)
+- **B안 "개발 노트" 선택.** 모눈 배경, 모노 날짜 열, 코드 블록 파일명 바(언어 표시), `#태그`. 시안 3개(A 미니멀, B 개발 노트, C 도트) 중 사용자 선택.
+- **문구 (사용자 확정):** title "Krenin의 devlog", description "앱과 게임을 Claude로 만듭니다. 개발하면서 겪은 일을 기록합니다." (띄어쓰기만 교정), About은 사용자가 쓴 문장 그대로. GitHub·Threads 링크는 넣지 않음. 메뉴는 About · dev.to (EN).
+- **방식 = minima 유지 + 일부 덮어쓰기.** `theme: minima`를 두면 jekyll-seo-tag·jekyll-feed가 그대로 동작. CSS는 `assets/main.scss`를 통째로 새로 써서 minima sass를 import하지 않음(덮어쓰기 충돌 방지). `default.html`·`page.html`은 테마 것을 그대로 씀.
+- **글꼴:** 본문 IBM Plex Sans KR, 코드·날짜 IBM Plex Mono (Google Fonts). 한글 웹폰트는 무거워서 `display=swap`.
+- **permalink 미변경.** 기존 기본값(`/:categories/:year/:month/:day/:title:output_ext`) 유지.
+- **닉네임·도메인 조사 결과:** GitHub 사용자명을 바꾸면 `rogue1228.github.io` 주소가 사라짐(문서에 Pages 리다이렉트 언급 없음, 저장소 URL만 리다이렉트). 커스텀 도메인은 github.io 주소를 경로 유지한 채 301 리다이렉트함 — `jekyll.github.io/jekyll/docs/installation/` → `jekyllrb.com/docs/installation/` 실측(2026-10-12). 따라서 주소를 바꾸려면 사용자명 변경이 아니라 커스텀 도메인.
+- **로컬 미리보기:** scratchpad에 `github-pages` gem(223, Jekyll 3.9, minima 2.5.1) 설치. Ruby 4라 `csv`·`base64`·`bigdecimal`·`logger`·`ostruct` gem 추가 필요. 실제 Pages는 Jekyll 3.10.
