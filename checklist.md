@@ -9,4 +9,4 @@
 - [x] USER_GUIDE.md: GitHub repo 생성·push·Pages 활성화, dev.to 키
 - [x] Threads 토큰 입력 후 읽기 전용 검증 (`GET /v1.0/me`)
 - [x] `scripts/threads_publish.py` + WORKFLOW 5단계(홍보) — verify: 500자 초과·토큰 없음 오류 확인
-- [ ] 1회 수동 실행으로 주제 후보가 나오는지 확인
+- [x] 1회 수동 실행으로 주제 후보가 나오는지 확인

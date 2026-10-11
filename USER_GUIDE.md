@@ -29,7 +29,7 @@
 - [ ] **GitHub Pages 켜기** — 시스템이 `_posts/`를 블로그로 렌더링합니다.
   1. GitHub 저장소 → Settings → Pages → Source: **Deploy from a branch**, Branch: **main** / **(root)** → Save
   2. 1~2분 뒤 `https://<github-username>.github.io/devlog/` 접속 확인
-- [ ] **예약 작업 1회 수동 실행** — 첫 실행에서 도구 권한을 승인해 두면 이후 자동 실행이 권한 요청에서 멈추지 않습니다.
+- [x] **예약 작업 1회 수동 실행** (2026-10-12 완료, 주제 후보 5개 생성 확인) — 첫 실행에서 도구 권한을 승인해 두면 이후 자동 실행이 권한 요청에서 멈추지 않습니다.
   1. Claude 앱 사이드바 → Scheduled → **devlog 블로그 주제 후보** → **Run now**
   2. 뜨는 권한 요청(Bash 실행 등)을 승인
 - 참고: 예약 작업은 Claude 앱이 열려 있을 때만 실행됩니다. 닫혀 있으면 다음에 앱을 열 때 실행됩니다.
