@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<!-- 글 본문: 제목, 날짜·읽는 시간·태그, 본문, 목록으로 돌아가기 -->
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+    {%- comment -%} 한글은 단어 수가 안 맞아 글자 수 기준(분당 약 500자)으로 계산 {%- endcomment -%}
+    {%- assign minutes = content | strip_html | strip_newlines | size | divided_by: 500 | plus: 1 -%}
+    <p class="post-meta">
+      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%Y-%m-%d" }}</time>
+      <span>읽는 데 {{ minutes }}분</span>
+      {%- for tag in page.tags -%}<span class="tag">{{ tag | escape }}</span>{%- endfor -%}
+    </p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  <a class="back" href="{{ "/" | relative_url }}">← 글 목록</a>
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+</article>

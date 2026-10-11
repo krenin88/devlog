@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<!-- 홈: 소개 문구와 날짜 열이 있는 글 목록 -->
+<div class="home">
+  <p class="intro">{{ site.description | escape }}</p>
+  {{ content }}
+  <ul class="post-list">
+    {%- for post in site.posts -%}
+    <li>
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+      <div>
+        <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+        {%- if post.tags.size > 0 -%}
+        <div class="tags">{% for tag in post.tags %}<span>{{ tag | escape }}</span>{% endfor %}</div>
+        {%- endif -%}
+      </div>
+    </li>
+    {%- endfor -%}
+  </ul>
+</div>

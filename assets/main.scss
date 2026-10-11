@@ -1,0 +1,146 @@
+---
+---
+// minima sass 대신 쓰는 B안 "개발 노트" 스타일 (라이트·다크)
+
+:root {
+  --bg: #f7f8f6;
+  --fg: #1e2422;
+  --muted: #5d6a65;
+  --line: #dde2df;
+  --accent: #23704f;
+  --code-bg: #ebefed;
+  --grid: rgba(44, 122, 91, .06);
+  --hl-comment: #6b7a73;
+  --hl-keyword: #8a3ffc;
+  --hl-string: #1f7a4c;
+  --hl-number: #b45309;
+  --hl-name: #1d5fa8;
+  --f-sans: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  --f-mono: "IBM Plex Mono", "IBM Plex Sans KR", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141917;
+    --fg: #e2e8e5;
+    --muted: #93a19b;
+    --line: #2a332f;
+    --accent: #5fc79b;
+    --code-bg: #1c2320;
+    --grid: rgba(95, 199, 155, .05);
+    --hl-comment: #7f8f88;
+    --hl-keyword: #c4a5ff;
+    --hl-string: #8fd9b0;
+    --hl-number: #f0b46a;
+    --hl-name: #8cc2ff;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background-color: var(--bg);
+  background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 24px 24px;
+  color: var(--fg);
+  font-family: var(--f-sans);
+  font-size: 17px;
+  line-height: 1.8;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+img { max-width: 100%; height: auto; }
+
+.wrapper { max-width: 720px; margin: 0 auto; padding-inline: 20px; }
+
+// 상단
+.site-header { padding-block: 24px 0; }
+.site-header .wrapper {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px 16px;
+  padding-bottom: 14px; border-bottom: 1px solid var(--line);
+}
+.site-title { font-family: var(--f-mono); font-weight: 600; font-size: 1.05rem; color: var(--fg); text-decoration: none; }
+.site-title .prompt { color: var(--accent); }
+.site-nav { display: flex; flex-wrap: wrap; gap: 16px; font-family: var(--f-mono); font-size: .85rem; }
+.site-nav a { color: var(--muted); text-decoration: none; }
+.site-nav a:hover { color: var(--accent); }
+
+.page-content { padding-block: 32px 56px; }
+
+// 홈 목록
+.intro { color: var(--muted); margin: 0 0 32px; }
+.post-list { list-style: none; padding: 0; margin: 0; }
+.post-list li {
+  display: grid; grid-template-columns: 7.5em minmax(0, 1fr); gap: 16px;
+  padding-block: 16px; border-top: 1px dashed var(--line);
+}
+.post-list time { font-family: var(--f-mono); font-size: .85rem; color: var(--muted); padding-top: 3px; font-variant-numeric: tabular-nums; }
+.post-link { font-weight: 700; font-size: 1.12rem; line-height: 1.5; color: var(--fg); text-decoration: none; }
+.post-link:hover { color: var(--accent); }
+.tags { display: flex; flex-wrap: wrap; gap: 4px 10px; margin-top: 6px; }
+.tags span, .post-meta .tag { font-family: var(--f-mono); font-size: .78rem; color: var(--accent); }
+.tags span::before, .post-meta .tag::before { content: "#"; opacity: .6; }
+
+// 글 머리
+.post-header { margin-bottom: 32px; }
+.post-title { font-size: 1.75rem; line-height: 1.4; margin: 0 0 10px; text-wrap: balance; }
+.post-meta { display: flex; flex-wrap: wrap; gap: 4px 14px; margin: 0; font-family: var(--f-mono); font-size: .8rem; color: var(--muted); }
+
+// 본문
+.post-content > :first-child { margin-top: 0; }
+.post-content p, .post-content ul, .post-content ol, .post-content blockquote { margin: 0 0 1.2em; }
+.post-content h2 { font-size: 1.3rem; line-height: 1.45; margin: 2.2em 0 .8em; }
+.post-content h2::before { content: "## "; font-family: var(--f-mono); font-weight: 400; color: var(--accent); }
+.post-content h3 { font-size: 1.12rem; margin: 1.8em 0 .6em; }
+.post-content h3::before { content: "### "; font-family: var(--f-mono); font-weight: 400; color: var(--accent); }
+.post-content li + li { margin-top: .3em; }
+.post-content blockquote { padding-left: 16px; border-left: 3px solid var(--line); color: var(--muted); }
+.post-content hr { border: 0; border-top: 1px dashed var(--line); margin: 2.4em 0; }
+
+code { font-family: var(--f-mono); font-size: .88em; }
+:not(pre) > code { background: var(--code-bg); padding: .1em .35em; border-radius: 4px; word-break: break-all; }
+div.highlighter-rouge, figure.highlight {
+  margin: 0 0 1.4em; border: 1px solid var(--line); border-radius: 6px; background: var(--code-bg);
+}
+div.highlighter-rouge[data-lang]::before {
+  content: attr(data-lang); display: block; padding: 4px 12px;
+  font-family: var(--f-mono); font-size: .75rem; color: var(--muted); border-bottom: 1px solid var(--line);
+}
+pre { margin: 0; padding: 14px; overflow-x: auto; font-size: .85rem; line-height: 1.6; }
+pre code { font-size: inherit; word-break: normal; }
+div.highlight, pre.highlight { background: transparent; margin: 0; }
+
+// 표: 넓으면 표만 가로 스크롤
+.post-content table {
+  display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; margin: 0 0 1.4em; font-size: .92rem;
+}
+.post-content th, .post-content td { border: 1px solid var(--line); padding: 8px 12px; text-align: left; vertical-align: top; }
+.post-content th { font-family: var(--f-mono); font-size: .8rem; font-weight: 600; background: var(--code-bg); white-space: nowrap; }
+
+.back { display: inline-block; margin-top: 40px; font-family: var(--f-mono); font-size: .85rem; text-decoration: none; }
+
+// 하단
+.site-footer .wrapper {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px;
+  padding-block: 18px 32px; border-top: 1px solid var(--line);
+  font-family: var(--f-mono); font-size: .8rem; color: var(--muted);
+}
+.site-footer a { color: var(--muted); }
+
+// rouge 문법 강조 (자주 나오는 토큰만)
+.highlight {
+  .c, .c1, .cm, .cs, .cp { color: var(--hl-comment); font-style: italic; }
+  .k, .kd, .kn, .kr, .kt, .kc, .ow { color: var(--hl-keyword); }
+  .s, .s1, .s2, .sb, .sc, .sd, .se, .sh, .si, .sx, .sr { color: var(--hl-string); }
+  .m, .mi, .mf, .mh, .mo, .il { color: var(--hl-number); }
+  .nf, .fm, .nc, .nb, .bp { color: var(--hl-name); }
+  .err { color: inherit; }
+}
+
+@media (max-width: 560px) {
+  body { font-size: 16px; }
+  .post-list li { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  .post-title { font-size: 1.5rem; }
+}

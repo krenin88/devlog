@@ -1,0 +1,14 @@
+<!-- 사이트 하단: 제목과 RSS, 코드 블록 언어 표시 스크립트 -->
+<footer class="site-footer">
+  <div class="wrapper">
+    <span>{{ site.title | escape }}</span>
+    <a href="{{ "/feed.xml" | relative_url }}">RSS</a>
+  </div>
+</footer>
+<script>
+  // 코드 블록 위 바에 언어 이름을 띄운다 (language-xxx 클래스 → data-lang)
+  document.querySelectorAll('div[class*="language-"]').forEach(function (el) {
+    var m = el.className.match(/language-(\S+)/);
+    if (m && m[1] !== 'plaintext') el.setAttribute('data-lang', m[1]);
+  });
+</script>
