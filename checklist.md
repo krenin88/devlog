@@ -19,4 +19,4 @@
 - [x] `about.md` 추가, `_config.yml` title·description·header_pages 갱신 (timezone·exclude 유지)
 - [x] 로컬 빌드 → verify: 첫 글 주소 `/2026/10/12/lizard-ranch-demo.html` 그대로, 경고 없음
 - [x] 화면 확인: 데스크톱·모바일 너비, 라이트·다크, 코드 블록·표 → 스크린샷
-- [ ] 사용자 승인 → main ff-merge → push → Pages 결과 확인
+- [x] 사용자 승인 → main ff-merge → push → Pages 결과 확인 (2026-10-12, c982230 빌드 성공, 홈·About·첫 글·feed 200)
