@@ -37,7 +37,7 @@
 
 ## Threads 자동 게시 준비
 
-- [ ] **Meta 앱과 토큰 발급** — 홍보 글을 Threads에 자동으로 올리려면 필요합니다. 무료입니다.
+- [x] **Meta 앱과 토큰 발급** (2026-10-12 완료, 계정 leejunhwa88 읽기 전용 검증) — 홍보 글을 Threads에 자동으로 올리려면 필요합니다. 무료입니다.
   1. https://developers.facebook.com/apps → **앱 만들기** → 사용 사례에서 **Threads API 액세스** 선택
   2. 사용 사례 → 맞춤 설정 → 권한에 `threads_basic`, `threads_content_publish` 추가
   3. 앱 역할 → 역할 → **Threads 테스터 추가**에 본인 Threads 계정 입력 → Threads 앱(설정 → 계정 → 웹사이트 권한 → 초대)에서 수락

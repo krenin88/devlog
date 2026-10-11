@@ -19,3 +19,4 @@ Claude로 앱을 개발한 내역을 블로그 글로 만든다. 한글은 GitHu
 - **Threads = API 자동, X = 문구만 (2026-10-12 사용자 결정).** X API는 무료 등급이 없고 링크 포함 글이 건당 약 $0.20(외부 자료 기준). 승인 단계가 있어 수동 복붙 비용이 작음. 게시가 잦아지면 X API 재검토.
 - **Threads 토큰은 게시 때마다 갱신해 .env에 다시 씀.** 장기 토큰은 60일 미사용 시 만료, 발급 24시간 이내엔 갱신 거절 → 그땐 기존 토큰 사용.
 - **GitHub:** https://github.com/rogue1228/devlog (public), Pages = main / root, https://rogue1228.github.io/devlog/
+- **`.env`는 main 체크아웃(`~/workspace/devlog/.env`)이 원본.** 사용자가 앱 파일 창에서 worktree 쪽 `.env`를 편집하는 일이 두 번 있었음 — 키 확인 시 양쪽을 다 보고 main으로 옮길 것.
