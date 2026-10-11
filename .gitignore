@@ -1,1 +1,6 @@
 .env
+# 승인 전 초안과 스캔 상태는 로컬 전용 (공개 저장소에 올리지 않음)
+drafts/
+state/
+# graft's local graph cache — regenerable, not committed (run `graft build`).
+/graft/
