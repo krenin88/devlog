@@ -1,0 +1,9 @@
+# 블로그 카테고리 목록 — 글 front matter의 category 값(id)과 화면 이름, 표시 순서
+- id: app
+  name: 앱 개발
+- id: game
+  name: 게임 개발
+- id: ai-agent
+  name: AI 에이전트
+- id: quant
+  name: 투자 자동화

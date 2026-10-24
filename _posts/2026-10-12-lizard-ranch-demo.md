@@ -2,6 +2,7 @@
 layout: post
 title: "하루 만에 만든 도마뱀 게임 데모, itch.io 공개까지"
 date: 2026-10-12
+category: game
 tags: [claude, gamedev, godot, indie]
 ---
 

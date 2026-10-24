@@ -82,6 +82,15 @@ img { max-width: 100%; height: auto; }
 .tags { display: flex; flex-wrap: wrap; gap: 4px 10px; margin-top: 6px; }
 .tags span, .post-meta .tag { font-family: var(--f-mono); font-size: .78rem; color: var(--accent); }
 .tags span::before, .post-meta .tag::before { content: "#"; opacity: .6; }
+.category {
+  font-family: var(--f-mono); font-size: .78rem; color: var(--fg); text-decoration: none;
+  padding: 0 6px; border: 1px solid var(--line); border-radius: 4px;
+}
+.category:hover { color: var(--accent); border-color: var(--accent); }
+
+// 카테고리 페이지
+.category-index h2 .count { font-family: var(--f-mono); font-size: .85rem; font-weight: 400; color: var(--muted); }
+.category-index section + section { margin-top: 40px; }
 
 // 글 머리
 .post-header { margin-bottom: 32px; }

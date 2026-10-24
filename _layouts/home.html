@@ -11,8 +11,12 @@ layout: default
       <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
       <div>
         <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-        {%- if post.tags.size > 0 -%}
-        <div class="tags">{% for tag in post.tags %}<span>{{ tag | escape }}</span>{% endfor %}</div>
+        {%- assign cat = site.data.categories | where: "id", post.category | first -%}
+        {%- if cat or post.tags.size > 0 -%}
+        <div class="tags">
+          {%- if cat %}<a class="category" href="{{ "/categories/" | relative_url }}#{{ cat.id }}">{{ cat.name }}</a>{% endif -%}
+          {%- for tag in post.tags %}<span>{{ tag | escape }}</span>{% endfor -%}
+        </div>
         {%- endif -%}
       </div>
     </li>

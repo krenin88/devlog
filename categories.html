@@ -1,0 +1,24 @@
+---
+layout: page
+title: 카테고리
+permalink: /categories/
+---
+<!-- 카테고리별 글 목록. 글이 있는 카테고리만 보인다 -->
+<div class="category-index">
+{%- for cat in site.data.categories -%}
+  {%- assign posts = site.posts | where: "category", cat.id -%}
+  {%- if posts.size > 0 %}
+  <section id="{{ cat.id }}">
+    <h2>{{ cat.name }} <span class="count">{{ posts.size }}</span></h2>
+    <ul class="post-list">
+      {%- for post in posts %}
+      <li>
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+        <div><a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></div>
+      </li>
+      {%- endfor %}
+    </ul>
+  </section>
+  {%- endif -%}
+{%- endfor %}
+</div>

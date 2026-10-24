@@ -10,6 +10,8 @@ layout: default
     <p class="post-meta">
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%Y-%m-%d" }}</time>
       <span>읽는 데 {{ minutes }}분</span>
+      {%- assign cat = site.data.categories | where: "id", page.category | first -%}
+      {%- if cat %}<a class="category" href="{{ "/categories/" | relative_url }}#{{ cat.id }}">{{ cat.name }}</a>{% endif -%}
       {%- for tag in page.tags -%}<span class="tag">{{ tag | escape }}</span>{%- endfor -%}
     </p>
   </header>

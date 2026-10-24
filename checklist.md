@@ -39,3 +39,14 @@
 - [ ] 사용자가 Search Console에서 인증·사이트맵 제출 → verify: 사이트맵 "성공" (krenin88/devlog#2)
 - 제외: 네이버 서치어드바이저 — 호스트 단위 등록이라 `/devlog/`로는 인증 불가. 사용자 결정으로 빼고 설정 삭제(2026-10-25)
 - 보류: 기본 OG 이미지(이미지 규칙이 정해진 뒤), robots.txt(프로젝트 사이트라 루트 `krenin88.github.io/robots.txt`에 둘 수 없음 — 404면 크롤러는 전부 허용으로 봄)
+
+# Checklist — 카테고리 (2026-10-25)
+
+- [x] `_config.yml`에 `permalink: /:year/:month/:day/:title:output_ext` 고정 → verify: 첫 글 주소 `/2026/10/12/lizard-ranch-demo.html` 그대로
+- [x] `_data/categories.yml` — 앱 개발(app)·게임 개발(game)·AI 에이전트(ai-agent)·투자 자동화(quant), 순서 고정
+- [x] `categories.html` (`/categories/`) — 카테고리별 글 묶음, 상단 메뉴에 추가
+- [x] 홈 목록·글 머리에 카테고리 표시(카테고리 페이지 앵커로 링크)
+- [x] 첫 글 `category: game`
+- [x] WORKFLOW.md 2단계 front matter에 `category` 추가
+- [x] 로컬 빌드 → verify: 경고 없음, 첫 글 주소 유지, /categories/ 화면(데스크톱·모바일, 라이트·다크) — Ruby 4는 liquid 4.0.3의 `untaint` 때문에 scratchpad 심(`-r shim.rb`)이 필요했음
+- [ ] push → Pages 빌드 성공, sitemap에 /categories/ 포함
