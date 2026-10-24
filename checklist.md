@@ -28,3 +28,13 @@
 - [ ] dev.to 영문판 처리 정하기 — dev.to는 상대 경로를 못 읽으므로 Pages 절대 주소를 쓰거나 dev.to에 업로드
 - [x] 이미지 출처 규칙 — 실제 스크린샷만, 필요한 만큼(최소 장수 없음), 개인정보(이메일·경로·키)가 보이는 화면은 가리기, alt 필수 (2026-10-25, WORKFLOW.md 2단계 "글 구조")
 - [ ] 디자인 확인 — 본문 이미지 폭·여백·캡션, 모바일, 다크 모드
+
+# Checklist — SEO 설정 (2026-10-25, github.io 주소로 Google·Naver 등록)
+
+- [ ] `_config.yml`에 `jekyll-sitemap` 추가 → verify: push 뒤 `/devlog/sitemap.xml` 200, 첫 글 주소 포함
+- [ ] `_config.yml`에 `author` 추가 → verify: 글 JSON-LD에 author 나옴
+- [x] 인증 메타 자리: Google은 `webmaster_verifications.google`, Naver는 `head.html`의 `naver-site-verification` (값은 사용자가 받아 오면 넣음)
+- [x] WORKFLOW.md 2단계 front matter에 `description` 추가 (검색 결과 요약문)
+- [x] 사용자 할 일 이슈: Search Console·서치어드바이저 속성 추가, 인증 코드 전달, 사이트맵 제출 (krenin88/devlog#2)
+- [ ] 인증 코드 넣고 push → 사용자가 두 콘솔에서 인증·사이트맵 제출 → verify: 콘솔에서 사이트맵 "성공"
+- 보류: 기본 OG 이미지(이미지 규칙이 정해진 뒤), robots.txt(프로젝트 사이트라 루트 `krenin88.github.io/robots.txt`에 둘 수 없음 — 404면 크롤러는 전부 허용으로 봄)
