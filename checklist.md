@@ -49,4 +49,4 @@
 - [x] 첫 글 `category: game`
 - [x] WORKFLOW.md 2단계 front matter에 `category` 추가
 - [x] 로컬 빌드 → verify: 경고 없음, 첫 글 주소 유지, /categories/ 화면(데스크톱·모바일, 라이트·다크) — Ruby 4는 liquid 4.0.3의 `untaint` 때문에 scratchpad 심(`-r shim.rb`)이 필요했음
-- [ ] push → Pages 빌드 성공, sitemap에 /categories/ 포함
+- [x] push → Pages 빌드 성공, sitemap에 /categories/ 포함 (265aa4f, 첫 글 주소·canonical 그대로 200, /categories/ 200)
