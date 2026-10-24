@@ -31,8 +31,8 @@
 
 # Checklist — SEO 설정 (2026-10-25, github.io 주소로 Google·Naver 등록)
 
-- [ ] `_config.yml`에 `jekyll-sitemap` 추가 → verify: push 뒤 `/devlog/sitemap.xml` 200, 첫 글 주소 포함
-- [ ] `_config.yml`에 `author` 추가 → verify: 글 JSON-LD에 author 나옴
+- [x] `_config.yml`에 `jekyll-sitemap` 추가 → verify: push 뒤 `/devlog/sitemap.xml` 200, 첫 글 주소 포함 (c82903d, 홈·About·첫 글 3개 확인)
+- [x] `_config.yml`에 `author` 추가 → verify: 글 JSON-LD에 author 나옴 (Person "Krenin", meta author도 출력)
 - [x] 인증 메타 자리: Google은 `webmaster_verifications.google`, Naver는 `head.html`의 `naver-site-verification` (값은 사용자가 받아 오면 넣음)
 - [x] WORKFLOW.md 2단계 front matter에 `description` 추가 (검색 결과 요약문)
 - [x] 사용자 할 일 이슈: Search Console·서치어드바이저 속성 추가, 인증 코드 전달, 사이트맵 제출 (krenin88/devlog#2)
