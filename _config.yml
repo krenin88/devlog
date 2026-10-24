@@ -7,7 +7,6 @@ exclude: [drafts, state, scripts, graft, checklist.md, context-notes.md, USER_GU
 header_pages: [about.md]
 plugins: [jekyll-feed, jekyll-seo-tag, jekyll-sitemap]
 author: Krenin
-# 검색엔진 소유 확인 코드 (Search Console·서치어드바이저에서 받은 HTML 태그의 content 값)
+# 검색엔진 소유 확인 코드 (Search Console에서 받은 HTML 태그의 content 값)
 webmaster_verifications:
   google: Dh1FoGQa3C0NDnE6Z6SGYhMj4sOIGcnqeEKC0AhdS5U
-naver_site_verification:
